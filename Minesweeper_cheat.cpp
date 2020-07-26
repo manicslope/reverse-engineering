@@ -19,19 +19,21 @@ int main() {
 		cout << "no h" << endl;
 	int value;
 	int i = 0;
-	int n = 0x0e;
+	int n = 0x0e;  // flag
 	// DWORD address = 0x01005340;
-	for (int address = 0x01005350; address <= 0x01005480; address++) {
+	for (int address = 0x01005340; address <= 0x01005660; address++) {
 		ReadProcessMemory(h, (LPVOID)address, &value, 1, 0);
 		value = value & 0xff;
-		if (value == 0x8f)
+		if (value == 0x8f)  // bomb
 			WriteProcessMemory(h, (PBYTE*)address, &n, 1, 0);
+		/*
 		if ((i % 2 != 0) && (value != 0x10))
 			cout << std::hex << value << " ";
 		if (value == 0x10) {
 			cout << endl;
 			i++;
 		}
+		*/
 	}
 	cin.get();
 }
