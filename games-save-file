@@ -2,9 +2,7 @@
 #gamedata.dat
 0x4e7 counter of saves, increment every time savefile is updating
 #gamestate.dat
-0x35a10-0x35a18 seed(also changes)
-0x37d53-money, but it doesn't change, and it appears that this offset may change
-Values 0x803f all around, starting with 0x00032e30(map?)
+Values 0x803f all around, starting with 0x00032e30(map?), every save offset values of money, bombs and keys
 
 # NFS MW
 0x4039-0x403b money
